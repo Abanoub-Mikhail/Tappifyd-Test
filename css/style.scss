@@ -1,0 +1,402 @@
+/*  S T A R T    V A R I A B L E S    S T Y L E  */
+
+$main-text-color : white ;
+$main-text-shadow : 2px 2px 5px rgba(0, 0, 0, 0.3);
+$main-transition : 0.4s all ;
+$background-color : #0B2545 ;
+
+/*  E N D     V A R I A B L E S    S T Y L E  */
+
+
+
+
+/*  S T A R T     G L O B A L     S T Y L E  */
+
+    ::selection{
+        background-color: #F4ACB7;
+    }
+
+    body {
+      background-color: #C7DBE6;
+    }
+
+    .container{
+      transition: 1s all;
+      opacity: 1;
+    }
+
+    .preparation{
+      transform: translateY(100px);
+      opacity: 0;
+    }
+
+    .animation {
+      opacity: 0;
+      transform: translatey(100px);
+      transition: all 0.7s ease-out;  
+  }
+  
+  .scroll-animation {
+      opacity: 1;
+      transform: translatey(0);
+  }
+
+  .animationIMG {
+    height: 300px;
+    transform: translateY(50%);
+    border-radius: 300px;
+    transition: all 0.7s ease-out;
+}
+
+  .scroll-animationIMG {
+    height: 580px;
+    transform: translateY(0);
+}
+
+/*  E N D     G L O B A L     S T Y L E  */
+
+
+
+
+
+
+/*  S T A R T    H E A D E R    S E C T I O N  */
+
+header
+{
+    a.logo {
+      letter-spacing: .3125rem;
+      font-size: 3.125rem;
+      transition: 0.8s all;
+      text-shadow: $main-text-shadow;
+    }
+
+    a.logo:hover{
+      transform: scaleX(1.3);
+    }
+
+    .nav-link , .navbar-nav .nav-link.active{
+      color: $main-text-color;
+      margin-inline: .625rem;
+      transition:$main-transition;
+      font-size: 1.25rem ;
+      padding: 10px;
+      text-shadow: $main-text-shadow;
+    }
+
+    .nav-link:hover{
+      background-color:#7a59a06d;
+      backdrop-filter: blur(4px);
+      border-radius: 30px;
+      color: $main-text-color;
+    }
+
+    .bg-bamb {
+      background-color:#7a59a06d;
+      backdrop-filter: blur(4px);
+      transition:$main-transition;
+      color: $main-text-color;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 3px 5px;
+      font-size: 25px;
+      padding: 25px;
+    }
+    .bg-bamb:hover{
+      color: $background-color;
+      background-color: $main-text-color;
+      transform: scale(1.1);
+    }
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+  .navbar-collapse {
+      background-color: rgb(43, 43, 43);
+      border-radius: 5px;
+      padding: 10px;
+  }
+  .navbar-collapse button {
+      margin-top: 10px;
+  }
+
+}
+
+  /*  E N D    H E A D E R    S E C T I O N  */
+
+
+
+
+
+
+  /*  S T A R t      H O M E    S E C T I O N  */
+
+  section.home {
+    height: 100vh;
+
+      .layer{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.105);
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 5.625rem;
+        width: 85%;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .scrollDown .btn{
+        border: 1px solid white;
+      }
+
+      video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+      }
+
+      .board 
+      {
+        .btn{
+          border: none;
+          transition: $main-transition;
+          font-size: 1.25rem;
+        }
+
+        .btn:hover{
+          background-color:#7a59a06d;
+          backdrop-filter: blur(4px);
+          color: $main-text-color;
+          border: none;
+          transform: scale(1.3);
+      
+        }
+
+      }
+
+
+      @mixin white-gradient {
+        background: linear-gradient(to right,  #ffb6fb 0%,rgba(255, 255, 255, 0) 30%);
+      }
+      
+      $animationSpeed: 40s;
+      
+      // Animation
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 5))}
+      }
+      
+      
+      // Styling
+      .slider {
+        overflow:hidden;
+        position: relative;
+        width:100%;
+          border-radius: 10px;
+        
+        &::before,
+        &::after {
+          @include white-gradient;
+          content: "";
+          height: 100px;
+          position: absolute;
+          width: 200px;
+          z-index: 2;
+        }
+        
+        &::after {
+          right: 0;
+          top: 0;
+          transform: rotateZ(180deg);
+        }
+      
+        &::before {
+          left: 0;
+          top: 0;
+        }
+        
+        .slide-track {
+          animation: scroll $animationSpeed linear infinite;
+          display: flex;
+          width: calc(250px * 14);
+        }
+        
+        .slide {
+              margin-inline: .9375rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+        }
+      }
+      
+
+      
+
+      @media only screen and (max-width: 992px) {
+        h1 {
+            font-size: 3.75rem;
+            width: 90%;
+        }
+        .info p {
+            width: 80% !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+      h1 {
+          font-size: 3.125rem;
+          width: 100%;
+      }
+      .info p {
+          width: 90% !important;
+          font-size: 1.25rem !important;
+      }
+      .organisations p{
+          font-size: 1.25rem !important;
+      } 
+      .board a {
+          margin-top: 20px;
+      }
+  }
+  }
+
+/*  E N D     H O M E     S E C T I O N  */
+
+
+
+
+
+
+
+
+/*  S T A R T    A B O U T    S E C T I O N  */
+
+.about 
+{
+  .about-text{
+    width: 80%;
+  }
+
+  .aliant {
+    position: relative;
+    max-width: 500px;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .moon {
+    position: absolute;
+    width: 250px;
+    top: 0px;
+    right: 20px;
+    z-index: 1;
+  }
+
+  .about-text
+  {
+    width: 95%;
+    h2 {
+      font-size: 1rem;
+      background-color:$background-color;
+      display: inline-block ;
+      color: $main-text-color;
+      padding: 10px 20px;
+      border-radius: 50px;
+      align-self: flex-start;
+    }
+
+    h3 {
+      font-size: 3.125rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 35px;
+    }
+  }
+
+  .bg-main {
+    background-color: $background-color;
+    color: $main-text-color;
+    transition: $main-transition;
+    font-size: 1.25rem;
+    padding: 15px 20px;
+  }
+  .bg-prima {
+      background-color: #4f75e6;
+      color: $main-text-color;
+      transition: $main-transition;
+      font-size: 1.25rem;
+    padding: 15px 20px;
+  }
+  .bg-main:hover , .bg-prima:hover{
+    background-color: white;
+    color: $background-color;
+    transform: scale(1.1);
+  }
+  
+  .textInfo {
+    z-index: 3;
+    top: 100px;
+    right: 50px;
+  }
+
+  .main {
+    background-color: $background-color;
+    color: $main-text-color;
+    padding: 30px;
+
+    h3 {
+      font-size: .8125rem;
+      margin: 0;
+    }
+
+    p {
+      color: #F4ACB7;
+      font-size: 2.1875rem;
+      font-weight: 600;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .about-text{
+      width:100%;
+    }
+  
+    .moon {
+      right: 20px;
+      top: -50px;
+    }
+    .textInfo{
+      top:20px;
+      right: 15px;
+    }
+    .main {
+      padding: 20px;
+    }
+    .animationIMG {
+      height: 100%;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .about-text h3 {
+      font-size: 1.875rem;
+    }
+  }
+
+}
+
+/*  E N D    A B O U T    S E C T I O N  */
+
+

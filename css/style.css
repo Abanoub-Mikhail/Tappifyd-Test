@@ -195,7 +195,7 @@ section.home .slider .slide {
 }
 @media only screen and (max-width: 768px) {
   section.home h1 {
-    font-size: 3.125rem;
+    font-size: 2.8125rem;
     width: 100%;
   }
   section.home .info p {
@@ -207,6 +207,9 @@ section.home .slider .slide {
   }
   section.home .board a {
     margin-top: 20px;
+  }
+  section.home .container {
+    padding-top: 5rem !important;
   }
 }
 
@@ -307,6 +310,12 @@ section.home .slider .slide {
   }
   .about .about-text h3 {
     font-size: 1.875rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about .textInfo {
+    top: 5px;
+    right: 15px;
   }
 }
 

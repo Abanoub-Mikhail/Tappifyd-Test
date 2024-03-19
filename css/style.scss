@@ -119,9 +119,13 @@ header
   .navbar-collapse button {
       margin-top: 10px;
   }
-
 }
 
+@media only screen and (max-width: 768px) {
+  a.logo{
+    font-size: 2.5rem !important;
+  }
+}
   /*  E N D    H E A D E R    S E C T I O N  */
 
 
@@ -146,6 +150,8 @@ header
         position: relative;
         z-index: 2;
       }
+
+     
 
       h1 {
         font-size: 5.625rem;
@@ -273,8 +279,24 @@ header
       }
       
   }
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    // display: none;
+    opacity: 0;
+    padding: 10px;
+    z-index: 99999;
+    transition: $main-transition;
+    background-color: $background-color;
+    color: white;
+    padding: 15px 20px;
+    }
   }
 
+  
+
+  
 /*  E N D     H O M E     S E C T I O N  */
 
 

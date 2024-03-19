@@ -97,6 +97,11 @@ header .bg-bamb:hover {
     margin-top: 10px;
   }
 }
+@media only screen and (max-width: 768px) {
+  a.logo {
+    font-size: 2.5rem !important;
+  }
+}
 /*  E N D    H E A D E R    S E C T I O N  */
 /*  S T A R t      H O M E    S E C T I O N  */
 section.home {
@@ -211,6 +216,18 @@ section.home .slider .slide {
   section.home .container {
     padding-top: 5rem !important;
   }
+}
+section.home #btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  padding: 10px;
+  z-index: 99999;
+  transition: 0.4s all;
+  background-color: #0B2545;
+  color: white;
+  padding: 15px 20px;
 }
 
 /*  E N D     H O M E     S E C T I O N  */

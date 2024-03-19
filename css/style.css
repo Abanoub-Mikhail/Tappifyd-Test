@@ -128,11 +128,11 @@ section.home .scrollDown .btn {
   border: 1px solid white;
 }
 section.home video {
+  position: absolute;
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
 }
 section.home .board .btn {
   border: none;
